@@ -5,12 +5,23 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Contato - Vale Imobiliária</title>
     <link rel="stylesheet" href="style.css">
+    <style>
+        .success-message {
+            display: none;
+            background-color: #4CAF50;
+            color: white;
+            padding: 15px;
+            margin-top: 20px;
+            text-align: center;
+            border-radius: 5px;
+        }
+    </style>
 </head>
 <body>
     <header>
         <div class="header-content">
             <h1>Vale Imobiliária</h1>
-            <p>Seu imóvel dos sonhos está aqui!</p>
+            <p>Entre em contato conosco!</p>
         </div>
     </header>
     <nav>
@@ -25,35 +36,44 @@
     </nav>
     <div class="container">
         <section id="contact">
-            <h2>Entre em Contato</h2>
-            <p>Estamos à disposição para ajudá-lo a encontrar o imóvel dos seus sonhos. Se você tiver alguma dúvida ou precisar de mais informações, não hesite em entrar em contato conosco.</p>
-            <div class="contact-info">
-                <h3>Nosso Endereço:</h3>
-                <p>Rua nseioq, 69, Ipatinga - MG</p>
-                
-                <h3>Telefone:</h3>
-                <p>(31) 91234-5678</p>
-                
-                <h3>Email:</h3>
-                <p>contato@valeimobiliaria.com.br</p>
-            </div>
-            <h3>Formulário de Contato</h3>
-            <form action="#" method="POST">
+            <h2>Fale Conosco</h2>
+            <p>Preencha o formulário abaixo para obter mais informações ou agendar uma visita ao imóvel de seu interesse.</p>
+            <form id="contact-form">
                 <label for="name">Nome:</label>
-                <input type="text" id="name" name="name" required><br>
-                
-                <label for="email">Email:</label>
-                <input type="email" id="email" name="email" required><br>
-                
+                <input type="text" id="name" name="name" required>
+
+                <label for="email">E-mail:</label>
+                <input type="email" id="email" name="email" required>
+
+                <label for="phone">Telefone:</label>
+                <input type="tel" id="phone" name="phone" required>
+
                 <label for="message">Mensagem:</label>
-                <textarea id="message" name="message" rows="4" required></textarea><br>
-                
-                <button type="submit">Enviar</button>
+                <textarea id="message" name="message" rows="5" required></textarea>
+
+                <button type="button" class="btn" onclick="showMessage()">Enviar Mensagem</button>
             </form>
+
+            <div class="success-message" id="success-message">
+                Mensagem enviada - entraremos em contato em breve!
+            </div>
         </section>
     </div>
     <footer>
         <p>&copy; 2024 Vale Imobiliária. Todos os direitos reservados.</p>
     </footer>
+
+    <script>
+        function showMessage() {
+            
+            var messageBox = document.getElementById('success-message');
+            messageBox.style.display = 'block';
+
+            
+            setTimeout(function() {
+                messageBox.style.display = 'none';
+            }, 4000);
+        }
+    </script>
 </body>
 </html>

@@ -1,89 +1,93 @@
-/* Resetando margens e espaçamentos padrão */
+/* Reset básico para garantir que o estilo seja consistente */
 * {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
 }
 
+/* Configuração do body e background */
 body {
-    font-family: 'Arial', sans-serif;
-    background-color: #f4f4f4;
+    font-family: Arial, sans-serif;
+    background-color: #f9f9f9;
     color: #333;
     line-height: 1.6;
 }
 
+/* Estilo do header */
 header {
     background-color: #35424a;
-    color: #fff;
-    padding: 30px 0;
+    color: white;
+    padding: 20px 0;
     text-align: center;
+    margin-bottom: 20px;
 }
 
-header .header-content {
-    max-width: 1200px;
-    margin: 0 auto;
-}
-
-header h1 {
-    font-size: 3em;
+header .header-content h1 {
+    font-size: 36px;
     margin-bottom: 10px;
 }
 
-header p {
-    font-size: 1.2em;
+header .header-content p {
+    font-size: 18px;
 }
 
+/* Navbar */
 nav {
     display: flex;
     justify-content: space-between;
     align-items: center;
     background-color: #e8491d;
-    padding: 15px 20px;
+    padding: 10px 20px;
     position: sticky;
     top: 0;
-    z-index: 1000;
+    z-index: 100;
 }
 
 nav .logo img {
-    max-height: 50px;
+    width: 150px;
 }
 
 nav ul {
     list-style: none;
     display: flex;
+    gap: 20px;
 }
 
 nav ul li {
-    margin-left: 25px;
+    display: inline;
 }
 
 nav ul li a {
-    color: #fff;
     text-decoration: none;
-    font-size: 1.1em;
-    padding: 10px 15px;
-    transition: background-color 0.3s ease;
+    color: white;
+    font-size: 18px;
 }
 
 nav ul li a:hover {
-    background-color: #fff;
-    color: #e8491d;
-    border-radius: 5px;
+    color: #f4f4f4;
+    text-decoration: underline;
 }
 
+/* Container para a seção de imóveis */
 .container {
     max-width: 1200px;
-    margin: 40px auto;
+    margin: 0 auto;
     padding: 0 20px;
 }
 
-h2 {
-    font-size: 2.5em;
-    margin-bottom: 20px;
+/* Seção de propriedades */
+#properties {
+    margin-bottom: 40px;
+}
+
+#properties h2 {
     text-align: center;
+    margin-bottom: 30px;
+    font-size: 28px;
     color: #35424a;
 }
 
+/* Imóveis individuais */
 .properties {
     display: flex;
     flex-wrap: wrap;
@@ -92,46 +96,120 @@ h2 {
 }
 
 .property {
-    background-color: #fff;
+    background-color: white;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
     border-radius: 8px;
-    box-shadow: 0 0 15px rgba(0, 0, 0, 0.1);
-    width: calc(33.333% - 20px);
-    overflow: hidden;
-    transition: transform 0.3s ease;
-    text-align: center;
-}
-
-.property:hover {
-    transform: translateY(-5px);
+    flex: 1 1 calc(33.333% - 20px);
+    padding: 20px;
+    transition: transform 0.3s;
 }
 
 .property img {
     width: 100%;
-    height: 250px;
+    height: 200px;
     object-fit: cover;
-    border-bottom: 2px solid #e8491d;
+    border-radius: 8px;
+    margin-bottom: 15px;
 }
 
 .property h3 {
-    font-size: 1.6em;
-    color: #333;
-    margin: 10px 0;
+    font-size: 22px;
+    margin-bottom: 10px;
 }
 
 .property p {
-    font-size: 1.2em;
+    font-size: 16px;
     color: #666;
 }
 
-.property .price {
-    font-weight: bold;
-    color: #e8491d;
+.property:hover {
+    transform: scale(1.05);
 }
 
-footer {
-    background-color: #35424a;
-    color: white;
-    text-align: center;
-    padding: 20px 0;
+/* Detalhes do imóvel */
+#property-details {
+    display: flex;
+    justify-content: space-between;
     margin-top: 40px;
+}
+
+.property-detail img {
+    width: 50%;
+    border-radius: 8px;
+}
+
+.detail-text {
+    width: 45%;
+}
+
+.detail-text p {
+    margin-bottom: 10px;
+    font-size: 16px;
+}
+
+.detail-text ul {
+    list-style: none;
+    margin-top: 10px;
+}
+
+.detail-text ul li {
+    font-size: 16px;
+    margin-bottom: 8px;
+}
+
+/* Botão de contato */
+.contact-button .btn {
+    display: inline-block;
+    background-color: #e8491d;
+    color: white;
+    font-size: 18px;
+    padding: 15px 30px;
+    border-radius: 8px;
+    text-decoration: none;
+    transition: background-color 0.3s ease;
+}
+
+.contact-button .btn:hover {
+    background-color: #35424a;
+}
+
+/* Formulário de Contato */
+form {
+    background-color: white;
+    padding: 30px;
+    border-radius: 10px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    max-width: 600px;
+    margin: 0 auto;
+}
+
+form label {
+    font-size: 16px;
+    margin-bottom: 8px;
+    display: block;
+}
+
+form input, form textarea {
+    width: 100%;
+    padding: 12px;
+    margin-bottom: 20px;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    font-size: 16px;
+}
+
+form input[type="submit"], .contact-button .btn {
+    width: 100%;
+    background-color: #e8491d;
+    color: white;
+    border: none;
+    padding: 15px;
+    font-size: 18px;
+    cursor: pointer;
+    border-radius: 8px;
+    transition: background-color 0.3s ease;
+}
+
+form input[type="submit"]:hover, .contact-button .btn:hover {
+    background-color: #35424a;
 }
